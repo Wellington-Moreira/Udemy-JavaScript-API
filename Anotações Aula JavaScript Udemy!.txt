@@ -1,0 +1,8 @@
+Anotações Aula JavaScript Udemy!
+
+	SECTION 2
+-> Para fazer a comunicação entre front-end e back-end, ou comunicação entre dois back-ends, temos as 3 principais protocolos: SOAP (Simple Object Access Protocol), REST (Representational State Transfer), GraphQl.
+
+	->SOAP: protocolo baseado em XML, muito antigo, presente em sistemas legado.
+	-> REST: Estilo arquitetural amplamente utilizado para a criação de APIs web. REST utiliza os métodos HTTP, GET POST PUT DELETE PATCH, para permitir a comunicação entre back e frint-end.
+	-> GraphQL: linguagem ded consulta para APIs, permite que os clientes solicitem exatamente os dados que precisam e nada mais.
