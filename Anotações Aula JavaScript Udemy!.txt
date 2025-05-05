@@ -5,4 +5,42 @@ Anotações Aula JavaScript Udemy!
 
 	->SOAP: protocolo baseado em XML, muito antigo, presente em sistemas legado.
 	-> REST: Estilo arquitetural amplamente utilizado para a criação de APIs web. REST utiliza os métodos HTTP, GET POST PUT DELETE PATCH, para permitir a comunicação entre back e frint-end.
-	-> GraphQL: linguagem ded consulta para APIs, permite que os clientes solicitem exatamente os dados que precisam e nada mais.
+	-> GraphQL: linguagem de consulta para APIs, permite que os clientes solicitem exatamente os dados que precisam e nada mais.
+
+
+	SECTION 3
+-> Atalhos VSCode:
+- Fechar todas as pastas na árvore de projetos = "botão de colapse na barra de criar novo arquivo"
+- tirar TAB em massa = selecionar texto + shift + TAB
+- identificar onde está a chave/colchetes que abre/fecha um outro determinado = ctrl + shift + ]
+- pesquisar um arquivo digitando o nome = ctrl + p
+- ir pra uma linha específica na página = ctrl + g + "numero da linha"
+- renomear a mesma variável em vários locais ao mesmo tempo = seleciona + f2
+- abrir terminal = ctrl + '
+- abrir um NOVO terminal = ctrl + shift + '
+- formatar documento = shift + alt + f
+- abrir navegação entre abas já abertas = ctrl + tab
+- escrever em várias linhas ao mesmo tempo = alt + click nas linhas
+- comentar varias linhas = ctrl + ;
+- duplicar linha selecionada = shift + alt + seta pra cima ou baixo
+- arrastar linha selecionada = alt + seta pra cima ou baixo
+
+
+
+
+	SECTION EXTRA Git & GitHub
+
+feat: Algo relacionado com features que você adicionar;
+fix: Algo para corrigir;
+docs: Algo relacionado a documentações, README e afins;
+style: Algo relacionado com estilização;
+refactor: Algo relacionado com refatoração (refazer);
+perf: Algo relacionado a performance;
+test: Algo com testes;
+chore: Algo para coisas relacionados a build, configs e afins.
+
+https://www.youtube.com/watch?v=ViyU7ro9Xjc&list=PLI8zu4XrMjAzva6GTrDPiWd_RwXZFzKj6&index=2&ab_channel=InitCode
+Visto vídeos 1 e 2
+
+
+
