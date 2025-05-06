@@ -39,8 +39,33 @@ perf: Algo relacionado a performance;
 test: Algo com testes;
 chore: Algo para coisas relacionados a build, configs e afins.
 
-https://www.youtube.com/watch?v=ViyU7ro9Xjc&list=PLI8zu4XrMjAzva6GTrDPiWd_RwXZFzKj6&index=2&ab_channel=InitCode
-Visto vídeos 1 e 2
+COMANDOS GIT
+ctrl + L OU clear: limpa o terminal do gitbash
+code .: abre o vs code na pasta selecionada
+cd "nome da pasta": entra em uma pasta criada
+mkdir "nome da pasta": cria uma pasta
+git init: inicia o git na pasta que está
+git status: mostra o status da branch atual, se tem arquivos alterados ou não
+git add <"filename ou .">: adiciona os arquivos selecionados ou todos para ser comittados
+git restore --staged <filename ou .>:remove os arquivos selecionados ou todos para não ser comittados
+git branch <branchname>: cria uma nova branch
+git checkout <branchname>: troca de branch
+git checkout -b <branchname>: cria uma nova branch e já troca
+git commit -m "<description>": faz o commit com a mensagem
+git merge <branchname>: mescla as branches
+git branch -D <branchname>: deleta a branch criada
+git clone "link": faz download do repositório no GitHub pro local, por https
+
+
+
+
+	SECTION 4
+
+	-> Variáveis em JS:
+- var = possível alterar o valor
+- let = possível alterar o valor
+- const = valor constante
+
 
 
 
