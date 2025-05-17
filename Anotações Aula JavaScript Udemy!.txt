@@ -67,5 +67,22 @@ git clone "link": faz download do repositório no GitHub pro local, por https
 - const = valor constante
 
 
+	SECTION 6
+
+	-> Métodos de array
+- push = coloca um elemento na última posição do array
+- unshift = coloca um elemento na primeira posição do array
+- pop = remove o ultimo elemento do array
+- shift = remove o primeiro elemento do array
+- slice (inicial, final) = retorna o array dividido no range especificado
+- splice (a partir desse índice, apaga esse numero de elementos(ou até o final se não especificar)) = retorna o array até 1 elemento antes do indicado
+- forEach (variável => {
+	função a ser executada  = itera em todos os elementos a função descrita
+}
+
+
+
+
+
 
 
