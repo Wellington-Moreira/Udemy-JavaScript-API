@@ -81,6 +81,41 @@ git clone "link": faz download do repositório no GitHub pro local, por https
 }
 
 
+	SECTION 7
+
+	-> Métodos HTTP:
+- get: recupera uma lista ou um recurso
+- post: cria um novo recurso
+- put: atualiza um recurso
+- delete: exclui um recurso
+
+Comunicações HTTP tem uma request e um response
+
+	LADO DO CLIENTE
+request: 
+
+	Método = get, post, put, delete;
+
+	URI = caminho e params;
+	
+	Headers =  Authorization, Content-Type, User-Agente;
+
+	Body (só POST e PUT) = dados a serem enviados (JSON)
+
+	Parâmetros de consulta = query: {num1: '2', num2: '3'}
+
+
+
+Passo a passo criação de API:
+
+- (pelo menos neste caso): alterar a branch do git
+- utilizar comando "npm init" no terminal
+- fazer a configuração do "package.json"
+- criar arquivo "index.js" para fazer a inicialização da API
+
+	(alterações no código, tem que parar o servidor com ctrl+c no terminal, e iniciar index.js novamente)
+
+	(pra passar um query param na requisição: no final da url + "?key=value&key=value")
 
 
 
