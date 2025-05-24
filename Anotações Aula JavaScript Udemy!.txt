@@ -119,5 +119,69 @@ Passo a passo criação de API:
 
 
 
+	SECTION 10 (MVC)
+Componentes de MVC para API (não tem view): Controller, Models, Routes, Services, Middlewares, Index
+
+Controllers: try catch, status e send
+Routes: Métodos get, post, put, delete
+Services: Método em sí e validações (trhow)
+Tests: Testes
+Index.js: Inicialização do sistema
 
 
+			PASSO A PASSO CRIAÇÃO DE API DO ZERO
+1- Definir a pasta na área de trabalho
+2- Abrir a pasta no vscode
+3- comando console "npm init" + "enter" até criar package.json
+4- comando "npm i express"
+5- comando "npm i jest --save-dev" (conseguir fazer testes)
+6- no package.json na parte de "Debug" deixar:
+  "scripts": {
+    "dev": "node --watch index.js",
+    "test": "jest test/*"
+  },
+
+7- Criar pasta "src" fora de "node modules"
+8- Dentro de "src" criar pasta "routes" + "controllers" + "services"
+9- Fora de "src" criar pasta "test"
+10- Dentro de "test" criar arquivo "index.js"
+11- Dentro de "index" importar express: const express = require("express");
+12- Criar variável app e startar express: const app = express();
+13- Adicionar: app.use(express.json);
+14- adicionar:
+app.listen(3000, () =>{
+    console.log("Service running on port 3000")
+})
+
+ESTRUTURA BASE DA API CONSTRUÍDA
+
+15- Na pasta "routes" criar arquivo "pessoa.js"
+16- importar o express: const express = require("express");
+17- adicionar quem vai controlar as rotas dos métodos: const router = express.Router();
+
+
+		TESTES UNITÁRIOS
+Disponibiliza uma estrutura de testes (Mocha, Jasmine, Jest, Cucumber);
+
+Prove funções de validação (assert) (Chai, Jasmine, Jest, Unexpected);
+
+Gera, mostra (display) e observa (watch) o resultado dos testes (Mocha, Jasmine, Jest, Karma);
+
+Gera e compara snapshots do componente e estrutura de dados, para garantir que as mudanças anteriores foram como o planejado (Jest, Ava);
+
+Prove mocks, spies, e stubs (Sinon, Jasmine, enzyme, Jest, testdouble);
+
+Gera relatórios de cobertura de código (code coverage) (Istanbul, Jest, Blanket);
+
+Prove um navegador, ou ambiente parecido, com controle sobre seus cenários de execução (Protractor, Phantom, Casper).
+
+
+Blocos do arquivo de teste:
+describe = Grupo de testes
+it = Cada teste em específico
+
+beforeAll = roda antes dos its
+afterAll = roda depois dos its
+
+expect = valor recebido
+toBe = valor esperado
