@@ -2,48 +2,47 @@ const ServiceUser = require("../services/user");
 
 class ApiUser{
 
-    findAll (_, res) {
+    async findAll (_, res) {
         try{    
-            const result = ServiceUser.findAll()
+            const result = await ServiceUser.findAll()
             res.status(200).send({result})
         } catch (e){
             res.status(500).send({msg: e.message})
         }
     }
-    findByIndex(req, res) {
+    async findById(req, res) {
         try{
-            const {index} = req.params;;
-            const result = ServiceUser.findByIndex(index);
+            const {id} = req.params;
+            const result = await ServiceUser.findById(id);
             res.send({result})
         }  catch (e){
             res.status(500).send({msg: e.message})
         }
     }
-    create(req, res) {
+    async create(req, res) {
         try{    
-            const {name} = req.body
-            ServiceUser.create(name)
-            res.status(201).send;
+            const {email, password } = req.body
+            await ServiceUser.create(email, password)
+            res.status(201).send({ msg: "User sucessfully created." });
         } catch (e){
             res.status(500).send({msg: e.message})
         }
     }
-    update(req, res) {
+    async update(req, res) {
         try{   
-            const {index} = req.params; 
-            const {name} = req.body
-            ServiceUser.update(index, name)
-            const result = ServiceUser.findByIndex(index);
+            const {id} = req.params; 
+            const {email, password} = req.body
+            const result = await ServiceUser.update(id, email, password)            
             res.status(200).send({result})
         } catch (e){
             res.status(500).send({msg: e.message})
         }
     }
 
-    delete(req, res) {
+    async delete(req, res) {
         try{    
-            const {index} = req.params;
-            ServiceUser.delete(index);
+            const {id} = req.params;
+            await ServiceUser.delete(id);
             res.status(204).send()
         } catch (e){
             res.status(500).send({msg: e.message})

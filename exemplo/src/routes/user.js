@@ -4,9 +4,9 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', ApiUser.findAll)
-router.get('/:index', ApiUser.findByIndex)
+router.get('/:id', ApiUser.findById)
 router.post('/', ApiUser.create)
-router.put('/:index', ApiUser.update)
-router.delete('/:index', ApiUser.delete)
+router.put('/:id', ApiUser.update)
+router.delete('/:id', ApiUser.delete)
 
 module.exports = router;
