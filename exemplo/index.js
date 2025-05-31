@@ -3,13 +3,20 @@ const express = require ('express')
 const userRouter = require('./src/routes/user')
 const personRouter = require('./src/routes/person')
 const database = require('./src/database')
+const apiUser = require('./src/api/user')
+const authMiddleware = require('./src/middleware/auth')
 
 const app = express()
-
 const port = 3000
 
 //Middleware to allow Express reads the requisition body as a JSON
 app.use(express.json())
+
+app.post('/api/v1/user', apiUser.create)
+app.post('/api/v1/login', apiUser.login)
+
+//authentication middleweare
+app.use(authMiddleware)
 
 app.use('/api/v1/user', userRouter)
 app.use('/api/v1/person', personRouter)

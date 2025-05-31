@@ -1,5 +1,9 @@
 const user = require("../model/user")
+const jwt = require("jsonwebtoken")
+const bcrypt = require('bcrypt')
 
+const secretKey = "MyS3cr3tP455w0rD"
+const salt = 10
 class ServiceUser{
     async findAll(transaction){
         return user.findAll({transaction});
@@ -16,8 +20,10 @@ class ServiceUser{
             throw new Error ("Missing password information")
         }
 
+        const hashPass = await bcrypt.hash(password, salt);
+
         return user.create({
-            email, password
+            email, password: hashPass
         },{ transaction });
     }
 
@@ -25,7 +31,7 @@ class ServiceUser{
         const oldUser = await this.findById(id, transaction);
 
         oldUser.email = email || oldUser.email;
-        oldUser.password = password || oldUser.password;
+        oldUser.password = password ? await bcrypt.hash(password, salt) : oldUser.password
 
         oldUser.save({transaction});
 
@@ -36,6 +42,29 @@ class ServiceUser{
         const user = await this.findById(id, transaction);
         user.destroy({transaction});
         return true
+    }
+
+    async login(email, password){
+        if (!email){
+            throw new Error ("Missing email information");
+        } else if (!password){
+            throw new Error ("Missing password information")
+        }
+
+        const currentUser = await user.findOne({where: {email}});
+
+        if (!currentUser){
+            throw new Error("Invalid email or password.")
+        }
+
+        const verify = await bcrypt.compare(password, currentUser.password)
+        console.log(verify)
+
+        if (verify){
+            return jwt.sign({id: currentUser.id}, secretKey, {expiresIn: 60*60});
+        }
+
+        throw new Error("Invalid email or password.")
     }
 }
 

@@ -12,6 +12,7 @@ class ApiPerson{
     }
     async findById(req, res) {
         try{
+            console.log('findById: ', req.session)
             const {id} = req.params;
             const result = await ServicePerson.findById(id);
             res.send({result})

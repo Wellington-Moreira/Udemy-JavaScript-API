@@ -1,0 +1,82 @@
+	Levantamento de requisitos
+Empresa XPTO precisa de solução para controle de estoque
+Vários estoques espalhados pelo Brasil
+Controle de entrada/saída de produtos, registrando a quantidade das movimentações
+Todos os estoques utilizam os mesmos produtos
+Este SaaS poderá ser comercializado para outros clientes que precisarem, abriu mão da fidelidade
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Diagrama de Classes
+1. Classe Organização (tendo aberto mão da fidelidade, teremos outras organizações dentro desse sistema):
+- Representa uma organização que possui estoques, usuários, produtos.
+- Atributos:
+º id
+º nome
+º endereço
+º telefone
+º email
+º estoques: lista de estoques associados à organização
+º usuários
+º produtos
+- Métodos:
+º adicionarEstoque(estoque: Estoque)
+ºadocionarUsuario(usuário: Usuário)
+ºadicionarProduto(produto: Produto)
+
+2. Classe Estoque
+- Atributos:
+º id
+º nome
+º itens
+º organizacaoId
+
+- Métodos:
+ºaddItem
+ºremoveItem
+ºConsultItem
+
+3. Classe Usuário:
+-Atributos:
+º id
+º nome
+º email
+º senha
+º organização
+º role: papel do usuário (adm, operador de estoque)
+
+- Métodos:
+º movimentarEstoque (estoque: Estoque, produto: Produto, quantidade: number, tipoMovimentacao: string)
+º visualiarEstoque
+
+4. Classe Produto
+- Atributos:
+º id
+º nome
+º descrição
+º organização
+
+- Métodos:
+º atualizarInformacoes (nome: String, descrição: string)
+
+5. Classe MovimentacaoEstoque (representa uma movimentação de entrada ou saída do estoque)
+
+- Atributos:
+º id
+º usuarioId
+ºestoqueId
+º produtoId
+º quantidade
+º tipo
+º data
+
+- Métodos:
+º registrarMovimentacao
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	Considerações Adicionais
+
+- Ao criar uma organização, deverá criar automaticamente o usuário com role de ADM da organização
+- Somente usuário ADM poderá alterar/deletar a organização
+- Somente usuário ADM poderá criar/alterar/deletar outros usuários
+- Cada usuário só pode acessar e movimentar o estoque da sua própria organização
